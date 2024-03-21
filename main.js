@@ -1,13 +1,3 @@
-/*Code Block*/
-/*<div
-    data-section-custom-accordion
-    data-blog-href="/custom-accordion"
->
-</div>*/
-
-/*Fetch from BLOG*/
-
-
 (function (dataAttr){
     const utils = (function () {
         function getParentEl(el, tagName) {
@@ -50,7 +40,8 @@
 
     utils.setAttrParents(dataAttr, 'section');
 
-    const plugin = document.querySelector('div[data-section-custom-accordion]');
+    const plugin = document.querySelector(`div[${dataAttr}]`);
+
 
     const injectHtmlCode = (html) => {
         const div = document.createElement('div');
@@ -194,6 +185,4 @@
 
 
 }('data-section-custom-accordion')); // set data-attribute
-
-
 
